@@ -27,11 +27,12 @@ public class ServicioData {
     public void guardarServicio(Servicio servicio) {
         try {
             
-            String sql = "INSERT INTO servicio (descripcion, costo) VALUES ( ? , ? );";
+            String sql = "INSERT INTO servicio ( nombre, descripcion, costo) VALUES ( ?, ? , ? );";
 
             PreparedStatement ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, servicio.getDescripcion());
-            ps.setDouble(2, servicio.getCosto());
+            ps.setString(1, servicio.getNombre());
+            ps.setString(2, servicio.getDescripcion());
+            ps.setDouble(3, servicio.getCosto());
             
             ps.executeUpdate();
             
@@ -40,7 +41,7 @@ public class ServicioData {
             if (rs.next()) {
                 servicio.setCodigo(rs.getInt(1));
             } else {
-                System.out.println("No se pudo obtener el id luego de insertar un cliente");
+                System.out.println("error en guardarServicio");
             }
             
             ps.close();
@@ -70,12 +71,13 @@ public class ServicioData {
     
         try {
             
-            String sql = "UPDATE servicio SET codigo = ?, descripcion = ? , costo = ? ";
+            String sql = "UPDATE servicio SET codigo = ?, nombre = ? ,descripcion = ? , costo = ? ";
                     
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, servicio.getCodigo());
-            ps.setString(2, servicio.getDescripcion());
-            ps.setDouble(3, servicio.getCosto());
+            ps.setString(2, servicio.getNombre());
+            ps.setString(3, servicio.getDescripcion());
+            ps.setDouble(4, servicio.getCosto());
             
             ps.executeUpdate();
             
@@ -101,6 +103,7 @@ public class ServicioData {
             while(resultSet.next()){
                 servicio = new Servicio();
                 servicio.setCodigo(resultSet.getInt("codigo"));
+                servicio.setNombre(resultSet.getString("nombre"));
                 servicio.setDescripcion(resultSet.getString("descripcion"));
                 servicio.setCosto(resultSet.getDouble("costo"));
                  
@@ -108,7 +111,7 @@ public class ServicioData {
             ps.close();
             
         } catch (SQLException ex) {
-            System.out.println("Error al busca un servicio: " + ex.getMessage());
+            System.out.println("Error al buscar un servicio: " + ex.getMessage());
         }
         
         return servicio;
@@ -125,6 +128,7 @@ public class ServicioData {
             while(resultSet.next()){
                 servicio = new Servicio();
                 servicio.setCodigo(resultSet.getInt("codigo"));
+                servicio.setNombre(resultSet.getString("nombre"));
                 servicio.setDescripcion(resultSet.getString("descripcion"));
                 servicio.setCosto(resultSet.getDouble("costo"));
                 

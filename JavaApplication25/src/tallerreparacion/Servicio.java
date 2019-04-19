@@ -14,6 +14,19 @@ public class Servicio {
     public Servicio() {
     }
 
+    public Servicio(String nombre, String descripcion, double costo) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.costo = costo;
+    }
+
+    public Servicio(String nombre, double costo) {
+        this.nombre = nombre;
+        this.costo = costo;
+    }
+    
+
+    
     public Servicio(int codigo, String nombre, String descripcion, double costo) {
         this.codigo = codigo;
         this.nombre = nombre;
