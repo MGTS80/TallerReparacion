@@ -22,6 +22,7 @@ public class Reparacion {
         this.fechaReparacion = null;
     }
 
+   
     public Reparacion(Aparato aparato) {
         this.aparato = aparato;
     }
@@ -63,11 +64,11 @@ public class Reparacion {
         this.estado = estado;
     } 
     
-    public LocalDate getReparacion() {
+    public LocalDate getfechaeparacion() {
         return fechaReparacion;
     }
 
-    public void setReparacion(LocalDate reparacion) {
+    public void setfechaReparacion(LocalDate reparacion) {
         this.fechaReparacion = reparacion;
     }
     

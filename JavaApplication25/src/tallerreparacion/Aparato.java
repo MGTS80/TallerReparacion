@@ -15,21 +15,12 @@ public class Aparato {
     public Aparato() {
     }
 
-    public Aparato(int numserie, String tipo, Cliente cliente, LocalDate fechaingreso, LocalDate fechaegreso) {
-        this.numserie = numserie;
-        this.tipo = tipo;
-        this.cliente = cliente;
-        this.fechaIngreso = fechaingreso;
-        this.fechaEgreso = fechaegreso;
-    }
-
     public Aparato(int numserie, String tipo, Cliente cliente) {
         this.numserie = numserie;
         this.tipo = tipo;
         this.cliente = cliente;
-         this.fechaIngreso = LocalDate.now();
-        this.fechaEgreso = LocalDate.now();
-        
+        this.fechaIngreso = LocalDate.now();
+        this.fechaEgreso = null;
     }
 
     public Aparato(int numserie, String tipo) {
@@ -37,8 +28,6 @@ public class Aparato {
         this.tipo = tipo;
     }
     
-    
-
     public int getId() {
         return id;
     }
