@@ -33,11 +33,11 @@ public class AparatoData {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, aparato.getNumserie());
             ps.setString(2, aparato.getTipo());
-            ps.setInt(3, aparato.getCliente().getId());
-            ps.setDate(4, Date.valueOf(aparato.getFechaingreso()));
+            ps.setInt(3, aparato.getCliente().getDni());
+            ps.setDate(4, Date.valueOf(aparato.getFechaIngreso()));
            
            // ps.setDate(5, aparato.getFechaegreso());
-            ps.setDate(5, Date.valueOf(aparato.getFechaegreso()));
+            ps.setDate(5, Date.valueOf(aparato.getFechaEgreso()));
             
             ps.executeUpdate();
             
@@ -67,9 +67,9 @@ public class AparatoData {
             ps.setInt(1, aparato.getNumserie());
             ps.setString(2, aparato.getTipo());
             ps.setString(3, aparato.getCliente().getNombre());
-            ps.setDate(4, Date.valueOf(aparato.getFechaingreso()));
+            ps.setDate(4, Date.valueOf(aparato.getFechaIngreso()));
           //  ps.setDate(5, aparato.getFechaegreso());
-            ps.setDate(5, Date.valueOf(aparato.getFechaegreso()));
+            ps.setDate(5, Date.valueOf(aparato.getFechaEgreso()));
             
             ps.executeUpdate();
             
@@ -127,7 +127,7 @@ public class AparatoData {
                 aparato = new Aparato();
                 aparato.setId(resultSet.getInt("id"));
                 aparato.setNumserie(resultSet.getInt("numserie"));
-                aparato.getCliente().setId(resultSet.getInt("cliente"));
+                aparato.getCliente().setDni(resultSet.getInt("cliente"));
                // aparato.setFechaingreso(resultSet.getDate("fechaingreso"));
                //arreglar tema fechas
              //   aparato.setFechaegreso(resultSet.getDate("fechaegreso"));

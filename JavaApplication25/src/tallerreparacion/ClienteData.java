@@ -27,12 +27,12 @@ public class ClienteData {
     public void guardarCliente(Cliente cliente){
         try {
             
-            String sql = "INSERT INTO cliente (nombre, dni, domicilio, celular) VALUES ( ? , ? , ? , ? );";
+            String sql = "INSERT INTO cliente ( dni, nombre, domicilio, celular) VALUES ( ? , ? , ? , ? );";
 
             PreparedStatement ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
-            ps.setString(1, cliente.getNombre());
-            ps.setInt(2, cliente.getDni());
+            ps.setInt(1, cliente.getDni());
+            ps.setString(2, cliente.getNombre());
             ps.setString(3, cliente.getDomicilio());
             ps.setInt(4, cliente.getCelular());
                   
@@ -41,9 +41,9 @@ public class ClienteData {
             ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) {
-                cliente.setId(rs.getInt(1));
+                cliente.setDni(rs.getInt(1));
             } else {
-                System.out.println("No se pudo obtener el id luego de insertar un cliente");
+                System.out.println("ERROR X insertar un cliente");
             }
             ps.close();
             
@@ -56,11 +56,11 @@ public class ClienteData {
     
         try {
             
-            String sql = "UPDATE cliente SET nombre = ?, dni = ? , domicilio = ? , celular = ?";
+            String sql = "UPDATE cliente SET dni = ? , nombre = ?,  domicilio = ? , celular = ?";
                     
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, cliente.getNombre());
-            ps.setInt(2, cliente.getDni());
+            ps.setInt(1, cliente.getDni());
+            ps.setString(2, cliente.getNombre());
             ps.setString(3, cliente.getDomicilio());
             ps.setInt(4, cliente.getCelular());
             
@@ -87,8 +87,8 @@ public class ClienteData {
             
             while(resultSet.next()){
                 cliente = new Cliente();
-                cliente.setNombre(resultSet.getString("nombre"));
                 cliente.setDni(resultSet.getInt("dni"));
+                cliente.setNombre(resultSet.getString("nombre"));
                 cliente.setDomicilio(resultSet.getString("domicilio"));
                 cliente.setCelular(resultSet.getInt("celular"));
 
@@ -113,8 +113,8 @@ public class ClienteData {
             Cliente cliente;
             while(resultSet.next()){
                 cliente = new Cliente();
-                cliente.setNombre(resultSet.getString("nombre"));
                 cliente.setDni(resultSet.getInt("dni"));
+                cliente.setNombre(resultSet.getString("nombre"));
                 cliente.setDomicilio(resultSet.getString("domicilio"));
                 cliente.setCelular(resultSet.getInt("celular"));
                 
@@ -142,7 +142,7 @@ public class ClienteData {
             ps.close();
     
         } catch (SQLException ex) {
-            System.out.println("Error al borrar un alumno: " + ex.getMessage());
+            System.out.println("Error al borrar cliente: " + ex.getMessage());
         }
     }
       

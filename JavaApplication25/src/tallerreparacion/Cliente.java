@@ -8,36 +8,29 @@ package tallerreparacion;
  */
 public class Cliente {
     
-    private int id = 0;
-    private String nombre;
     private int dni;
+    private String nombre;
     private String domicilio;
     private int celular;
 
-    public Cliente(String nombre, int dni, String domicilio, int celular) {
-        this.nombre = nombre;
+    public Cliente() {
+    }
+
+    public Cliente(int dni, String nombre, String domicilio, int celular) {
         this.dni = dni;
+        this.nombre = nombre;
         this.domicilio = domicilio;
         this.celular = celular;
     }
 
-    public Cliente() {
-    }
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
+    public Cliente(String nombre, String domicilio, int celular) {
         this.nombre = nombre;
+        this.domicilio = domicilio;
+        this.celular = celular;
+    }
+
+    public Cliente(int dni) {
+        this.dni = dni;
     }
 
     public int getDni() {
@@ -46,6 +39,14 @@ public class Cliente {
 
     public void setDni(int dni) {
         this.dni = dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDomicilio() {
@@ -63,5 +64,7 @@ public class Cliente {
     public void setCelular(int celular) {
         this.celular = celular;
     }
+
+   
 }
 

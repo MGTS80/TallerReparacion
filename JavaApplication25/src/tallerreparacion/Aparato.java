@@ -9,9 +9,8 @@ public class Aparato {
     private int numserie;
     private String tipo;
     private Cliente cliente;
-    private LocalDate fechaingreso;
-   // private Date fechaegreso;
-      private LocalDate fechaegreso;
+    private LocalDate fechaIngreso;
+    private LocalDate fechaEgreso;
 
     public Aparato() {
     }
@@ -20,16 +19,16 @@ public class Aparato {
         this.numserie = numserie;
         this.tipo = tipo;
         this.cliente = cliente;
-        this.fechaingreso = fechaingreso;
-        this.fechaegreso = fechaegreso;
+        this.fechaIngreso = fechaingreso;
+        this.fechaEgreso = fechaegreso;
     }
 
     public Aparato(int numserie, String tipo, Cliente cliente) {
         this.numserie = numserie;
         this.tipo = tipo;
         this.cliente = cliente;
-         this.fechaingreso = LocalDate.now();
-        this.fechaegreso = LocalDate.now();
+         this.fechaIngreso = LocalDate.now();
+        this.fechaEgreso = LocalDate.now();
         
     }
 
@@ -72,20 +71,20 @@ public class Aparato {
         this.cliente = cliente;
     }
 
-    public LocalDate getFechaingreso() {
-        return fechaingreso;
+    public LocalDate getFechaIngreso() {
+        return fechaIngreso;
     }
 
-    public void setFechaingreso(LocalDate fechaingreso) {
-        this.fechaingreso = fechaingreso;
+    public void setFechaIngreso(LocalDate fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
     }
 
-    public LocalDate getFechaegreso() {
-        return fechaegreso;
+    public LocalDate getFechaEgreso() {
+        return fechaEgreso;
     }
 
-    public void setFechaegreso(LocalDate fechaegreso) {
-        this.fechaegreso = fechaegreso;
+    public void setFechaEgreso(LocalDate fechaEgreso) {
+        this.fechaEgreso = fechaEgreso;
     }
     
 }

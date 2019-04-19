@@ -15,7 +15,7 @@ public class TallerReparacion {
         
         try{
         Conexion con = new Conexion();
-        Cliente cl = new Cliente ("sr tlf", 8888, "ate", 5555777);
+        Cliente cl = new Cliente ( 8888, "sr tlf", "ate", 5555777);
         ClienteData cld = new ClienteData(con);
         cld.guardarCliente(cl);
         //cld.borrarCliente(123456);
