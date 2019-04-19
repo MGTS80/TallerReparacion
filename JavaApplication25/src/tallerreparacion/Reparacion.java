@@ -1,43 +1,34 @@
 package tallerreparacion;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
+//import java.util.ArrayList;
+//import java.util.List;
 
-/**
 
- */
 public class Reparacion {
     
     private int id = 0;
     private Servicio servicio;
    // private List <Servicio> servicio;//varios servicios 
     private Aparato aparato;
-    private String estado;
+    private boolean estado;
+    private LocalDate fechaReparacion;
 
     //public Reparacion(List<Servicio> servicio, Aparato aparato, String estado) {
-    public Reparacion (Servicio servicio, Aparato aparato, String estado ){
+    public Reparacion (Servicio servicio, Aparato aparato ){
         this.servicio = servicio;
         this.aparato = aparato;
-        this.estado = estado;
-    }
-
-    public Reparacion(Aparato aparato, String estado , Servicio servicio) {
-        this.servicio= servicio;
-        this.aparato = aparato;
-        this.estado = estado;
+        this.estado = false;
+        this.fechaReparacion = null;
     }
 
     public Reparacion(Aparato aparato) {
         this.aparato = aparato;
-        this.servicio= servicio;
-       // this.servicio= new ArrayList <Servicio>();
-        this.estado="pendiente";
     }
 
     public Reparacion() {
     }
     
-
     public int getId() {
         return id;
     }
@@ -64,16 +55,20 @@ public class Reparacion {
         this.aparato = aparato;
     }
 
-    public String getEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(boolean estado) {
         this.estado = estado;
+    } 
+    
+    public LocalDate getReparacion() {
+        return fechaReparacion;
     }
-    
-    
 
-
+    public void setReparacion(LocalDate reparacion) {
+        this.fechaReparacion = reparacion;
+    }
     
 }
