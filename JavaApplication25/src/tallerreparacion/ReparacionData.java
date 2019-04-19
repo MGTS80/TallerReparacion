@@ -28,11 +28,12 @@ public class ReparacionData {
     public void guardarReparacion(Reparacion reparacion){
         try {
             
-            String sql = "INSERT INTO reparacion (aparato, estado) VALUES ( ? , ? );";
+            String sql = "INSERT INTO reparacion (aparato, estado, fecharealizacion) VALUES ( ? , ?, ? );";
 
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, reparacion.getAparato().getId());
-            ps.setString(2, reparacion.getEstado());
+            ps.setBoolean(2, reparacion.getEstado());
+            ps.setDate(3, Date.valueOf(reparacion.getfechaeparacion()));
             
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
@@ -63,18 +64,17 @@ public class ReparacionData {
                 reparacion.setId(rs.getInt("id"));
                //Aparato a=buscarAparato(rs.getInt("idAparato"));
               //  reparacion.setAparato(a);
-                reparacion.setEstado(rs.getString("estado"));
-               
-                           }      
+                reparacion.setEstado(rs.getBoolean("estado"));
+            }  
+            
             ps.close();
+            
         } catch (SQLException ex) {
             System.out.println("Error al obtener reparaciones: " + ex.getMessage());
         }
-        
-        
+   
         return reparaciones;
     }
-    
     
     public Aparato buscarAparatoServicio(int id){
     Aparato aparato = null;
@@ -111,7 +111,7 @@ public class ReparacionData {
     Aparato aparato = null;
     try {
             
-            String sql = "SELECT * FROM apaato WHERE fechaingreso = ? ;";
+            String sql = "SELECT * FROM aparato WHERE fechaingreso = ? ;";
 
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setDate(1, fechaingreso);
@@ -122,10 +122,9 @@ public class ReparacionData {
                 aparato = new Aparato();
                 aparato.setNumserie(resultSet.getInt("numseie"));
                 aparato.setTipo(resultSet.getString("tipo"));
-          //      aparato.setFechaingreso(resultSet.getDate("fechaingreso"));
-                
+                //aparato.setFechaingreso(resultSet.getDate("fechaingreso"));
                 //fechas!!!
-               // aparato.setFechaegreso(resultSet.getDate("fechaegreso"));
+                // aparato.setFechaegreso(resultSet.getDate("fechaegreso"));
                 
             }      
             ps.close();
@@ -136,7 +135,6 @@ public class ReparacionData {
         
         return aparato;
     }
-    
     
     public List<Aparato> obtenerAparatos(){
        List<Aparato> aparatos = new ArrayList<Aparato>();
@@ -164,7 +162,5 @@ public class ReparacionData {
         
         return aparatos;
     }
-    
-   
-    
+      
 }
