@@ -38,7 +38,7 @@ public class ServicioData {
             ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) {
-                servicio.setId(rs.getInt(1));
+                servicio.setCodigo(rs.getInt(1));
             } else {
                 System.out.println("No se pudo obtener el id luego de insertar un cliente");
             }
@@ -73,7 +73,7 @@ public class ServicioData {
             String sql = "UPDATE servicio SET codigo = ?, descripcion = ? , costo = ? ";
                     
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, servicio.getId());
+            ps.setInt(1, servicio.getCodigo());
             ps.setString(2, servicio.getDescripcion());
             ps.setDouble(3, servicio.getCosto());
             
@@ -100,7 +100,7 @@ public class ServicioData {
             
             while(resultSet.next()){
                 servicio = new Servicio();
-                servicio.setId(resultSet.getInt("codigo"));
+                servicio.setCodigo(resultSet.getInt("codigo"));
                 servicio.setDescripcion(resultSet.getString("descripcion"));
                 servicio.setCosto(resultSet.getDouble("costo"));
                  
@@ -124,7 +124,7 @@ public class ServicioData {
             Servicio servicio;
             while(resultSet.next()){
                 servicio = new Servicio();
-                servicio.setId(resultSet.getInt("codigo"));
+                servicio.setCodigo(resultSet.getInt("codigo"));
                 servicio.setDescripcion(resultSet.getString("descripcion"));
                 servicio.setCosto(resultSet.getDouble("costo"));
                 

@@ -5,7 +5,8 @@ package tallerreparacion;
 
 public class Servicio {
     
-    private int id;
+    private int codigo;
+    private String nombre;
     private String descripcion;
     private double costo;
   
@@ -13,35 +14,35 @@ public class Servicio {
     public Servicio() {
     }
 
-    public Servicio(int id, String descripcio, double costo) {
-        this.id = id;
-        this.descripcion = descripcio;
-        this.costo = costo;
-    }
-
-    public Servicio(String descripcion, double costo) {
+    public Servicio(int codigo, String nombre, String descripcion, double costo) {
+        this.codigo = codigo;
+        this.nombre = nombre;
         this.descripcion = descripcion;
         this.costo = costo;
     }
 
-    public int getId() {
-        return id;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
-       
+    public String getNombre() {
+        return nombre;
+    }
 
-    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcio) {
-        this.descripcion = descripcio;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public double getCosto() {
@@ -51,6 +52,7 @@ public class Servicio {
     public void setCosto(double costo) {
         this.costo = costo;
     }
-  
+
+    
 
 }

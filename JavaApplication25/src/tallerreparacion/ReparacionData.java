@@ -84,7 +84,7 @@ public class ReparacionData {
             String sql = "SELECT * FROM apaato WHERE descripcion = ? ;";
 
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, servicio.getId());
+            ps.setInt(1, servicio.getCodigo());
            
             
             ResultSet resultSet=ps.executeQuery();
