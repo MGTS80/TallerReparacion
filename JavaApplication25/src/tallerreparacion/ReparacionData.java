@@ -28,12 +28,13 @@ public class ReparacionData {
     public void guardarReparacion(Reparacion reparacion){
         try {
             
-            String sql = "INSERT INTO reparacion (aparato, estado, fecharealizacion) VALUES ( ? , ?, ? );";
+            String sql = "INSERT INTO reparacion (aparato, estadoRealizado, fecharealizacion, servicio) VALUES ( ? , ?, ?,? );";
 
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, reparacion.getAparato().getId());
-            ps.setBoolean(2, reparacion.getEstado());
+            ps.setBoolean(2, reparacion.getEstadoRealizado());
             ps.setDate(3, Date.valueOf(reparacion.getfechaeparacion()));
+            ps.setInt (4, reparacion.getServicio().getCodigo());
             
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
@@ -64,7 +65,7 @@ public class ReparacionData {
                 reparacion.setId(rs.getInt("id"));
                //Aparato a=buscarAparato(rs.getInt("idAparato"));
               //  reparacion.setAparato(a);
-                reparacion.setEstado(rs.getBoolean("estado"));
+                reparacion.setEstadoRealizado(rs.getBoolean("estado"));
             }  
             
             ps.close();

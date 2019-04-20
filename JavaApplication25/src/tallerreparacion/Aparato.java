@@ -20,7 +20,7 @@ public class Aparato {
         this.tipo = tipo;
         this.cliente = cliente;
         this.fechaIngreso = LocalDate.now();
-        this.fechaEgreso = null;
+        this.fechaEgreso = LocalDate.now();//null;//PROFE!!!!! COMO GUARDAMOS UNA FECHA NULL
     }
 
     public Aparato(int numserie, String tipo) {

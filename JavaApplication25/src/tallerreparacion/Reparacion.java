@@ -11,15 +11,15 @@ public class Reparacion {
     private Servicio servicio;
    // private List <Servicio> servicio;//varios servicios 
     private Aparato aparato;
-    private boolean estado;
+    private boolean estadoRealizado;
     private LocalDate fechaReparacion;
 
-    //public Reparacion(List<Servicio> servicio, Aparato aparato, String estado) {
+    //public Reparacion(List<Servicio> servicio, Aparato aparato, String estadoRealizado) {
     public Reparacion (Servicio servicio, Aparato aparato ){
         this.servicio = servicio;
         this.aparato = aparato;
-        this.estado = false;
-        this.fechaReparacion = null;
+        this.estadoRealizado = false;
+        this.fechaReparacion = LocalDate.now();//no se como guardar null
     }
 
    
@@ -56,12 +56,12 @@ public class Reparacion {
         this.aparato = aparato;
     }
 
-    public boolean getEstado() {
-        return estado;
+    public boolean getEstadoRealizado() {
+        return estadoRealizado;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setEstadoRealizado(boolean estadoRealizado) {
+        this.estadoRealizado = estadoRealizado;
     } 
     
     public LocalDate getfechaeparacion() {

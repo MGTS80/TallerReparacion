@@ -44,9 +44,10 @@ public class AparatoData {
             ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) {
+                System.out.println("en el IF de insertar un aparato");
                 aparato.setNumserie(rs.getInt(1));
             } else {
-                System.out.println("No se pudo obtener el id luego de insertar un aparato");
+                System.out.println("en el ELSE de insertar un aparato");
             }
             ps.close();
     

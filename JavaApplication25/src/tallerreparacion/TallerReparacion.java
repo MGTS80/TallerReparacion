@@ -15,25 +15,25 @@ public class TallerReparacion {
         
         try{
         Conexion con = new Conexion();
-        Cliente cl = new Cliente ( 8888, "sr tlf", "ate", 5555777);
-        ClienteData cld = new ClienteData(con);
-        cld.guardarCliente(cl);
+        Cliente cl = new Cliente ( 55, "sr tlf", "ate", 55);
+     //   ClienteData cld = new ClienteData(con);
+     //   cld.guardarCliente(cl);
         //cld.borrarCliente(123456);
         //cld.actualizarCliente(cl);
         
-        Servicio ser = new Servicio ("servicio 2222", 111);
-        ServicioData serdat = new ServicioData (con);
-        serdat.guardarServicio(ser);
+        Servicio ser = new Servicio ("nombre 55",".", 55);
+     //   ServicioData serdat = new ServicioData (con);
+     //   serdat.guardarServicio(ser);
         
-        Aparato apar = new Aparato (555,"telefono",cl);
-        AparatoData apardat = new AparatoData (con);
-        apardat.guardarAparato(apar);
+        Aparato a = new Aparato (44,"aparatito",cl);
+     //   AparatoData ad = new AparatoData (con);
+      //  ad.guardarAparato(a);
         
-       /* Reparacion rep = new Reparacion (apar, "pantalla rota");
+        Reparacion rep = new Reparacion (ser, a);//(SERVICIO+APARATO)
         ReparacionData repData = new ReparacionData (con);
         repData.guardarReparacion(rep);
         
-        funciona pero: Error al guardar reparacion: (conn=341) Field 'servicio' doesn't have a default value
+       /* funciona pero: Error al guardar reparacion: (conn=341) Field 'servicio' doesn't have a default value
         servicio Lista no puede entrar vacia
         
         */

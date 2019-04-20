@@ -42,8 +42,9 @@ public class ClienteData {
 
             if (rs.next()) {
                 cliente.setDni(rs.getInt(1));
+                System.out.println("EN EL IF de insertar un cliente");
             } else {
-                System.out.println("ERROR X insertar un cliente");
+                System.out.println("EN EL ELSE de insertar un cliente");
             }
             ps.close();
             
