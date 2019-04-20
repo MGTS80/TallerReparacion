@@ -38,14 +38,14 @@ public class ClienteData {
                   
             ps.executeUpdate();
             
-            ResultSet rs = ps.getGeneratedKeys();
+            /*ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) {
                 cliente.setDni(rs.getInt(1));
                 System.out.println("EN EL IF de insertar un cliente");
             } else {
                 System.out.println("EN EL ELSE de insertar un cliente");
-            }
+            }*/
             ps.close();
             
         } catch (SQLException ex) {
