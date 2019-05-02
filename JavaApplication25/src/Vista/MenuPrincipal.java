@@ -108,7 +108,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void mNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mNuevoActionPerformed
        panelEscritorio.removeAll();
        panelEscritorio.repaint();
-       Nuevo nuevoCliente = new Nuevo();
+       NuevoCliente nuevoCliente = new NuevoCliente();
        nuevoCliente.setVisible(true);
        panelEscritorio.add(nuevoCliente);
        panelEscritorio.moveToFront(nuevoCliente);
