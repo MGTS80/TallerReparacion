@@ -33,7 +33,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         mCliente = new javax.swing.JMenu();
         mNuevo = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jActualizar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,8 +70,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         mCliente.add(mNuevo);
 
-        jMenu2.setText("Actualizar");
-        mCliente.add(jMenu2);
+        jActualizar.setText("Actualizar");
+        jActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jActualizarActionPerformed(evt);
+            }
+        });
+        mCliente.add(jActualizar);
 
         jMenuBar1.add(mCliente);
 
@@ -109,6 +114,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
        panelEscritorio.moveToFront(nuevoCliente);
     }//GEN-LAST:event_mNuevoActionPerformed
 
+    private void jActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jActualizarActionPerformed
+       panelEscritorio.removeAll();
+       panelEscritorio.repaint();
+       ActualizarCliente cliente = new ActualizarCliente();
+       cliente.setVisible(true);
+       panelEscritorio.add(cliente);
+       panelEscritorio.moveToFront(cliente);
+    }//GEN-LAST:event_jActualizarActionPerformed
+
    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -143,8 +157,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jActualizar;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu mArchivo;
     private javax.swing.JMenu mCliente;

@@ -32,10 +32,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mNuevoActionPerformed"/>
               </Events>
             </Menu>
-            <Menu class="javax.swing.JMenu" name="jMenu2">
+            <Menu class="javax.swing.JMenu" name="jActualizar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Actualizar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jActualizarActionPerformed"/>
+              </Events>
             </Menu>
           </SubComponents>
         </Menu>

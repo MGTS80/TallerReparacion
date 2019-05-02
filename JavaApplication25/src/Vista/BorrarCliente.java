@@ -27,7 +27,7 @@ public class BorrarCliente extends javax.swing.JInternalFrame {
             con= new Conexion();
             clienteData = new ClienteData(con);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Nuevo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BorrarCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

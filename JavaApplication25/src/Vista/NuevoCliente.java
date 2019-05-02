@@ -15,23 +15,23 @@ import tallerreparacion.Conexion;
  *
  * @author Cristobal
  */
-public class ActualizarCliente extends javax.swing.JInternalFrame {
-
-     private ClienteData clienteData;
-    private Conexion con;
+public class NuevoCliente extends javax.swing.JInternalFrame {
+ 
+       private ClienteData clienteData;
+       private Conexion con;
     
     
-    public ActualizarCliente() { 
+    public NuevoCliente() { 
         try {
             initComponents();
             con= new Conexion();
             clienteData = new ClienteData(con);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ActualizarCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NuevoCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
+        
+ 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -46,9 +46,9 @@ public class ActualizarCliente extends javax.swing.JInternalFrame {
         tNombre = new javax.swing.JTextField();
         tDomicilio = new javax.swing.JTextField();
         tCelular = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        bGuardar = new javax.swing.JButton();
 
-        jLabel1.setText("Actualizar Cliente");
+        jLabel1.setText("Cliente");
 
         jLabel2.setText("DNI");
 
@@ -61,14 +61,14 @@ public class ActualizarCliente extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Nombre");
 
-        jLabel4.setText("Domiclio");
+        jLabel4.setText("Domicilio");
 
-        jLabel5.setText("Celular");
+        jLabel5.setText("Cel / Tel");
 
-        jButton1.setText("Actualizar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bGuardar.setText("Guardar");
+        bGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bGuardarActionPerformed(evt);
             }
         });
 
@@ -79,45 +79,49 @@ public class ActualizarCliente extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
+                        .addGap(169, 169, 169)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
+                            .addComponent(bGuardar)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tDomicilio))
+                                .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4)
                                         .addComponent(jLabel3)
                                         .addComponent(jLabel2))
                                     .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(tDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(tDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(33, 33, 33)
                                             .addComponent(bBuscar))
-                                        .addComponent(tNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(tDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(89, Short.MAX_VALUE))
+                                        .addComponent(tNombre)))))))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bBuscar))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(tDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bBuscar)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3))
                     .addComponent(tNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -125,11 +129,11 @@ public class ActualizarCliente extends javax.swing.JInternalFrame {
                     .addComponent(tDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(28, 28, 28)
-                .addComponent(jButton1)
-                .addContainerGap(28, Short.MAX_VALUE))
+                    .addComponent(jLabel5)
+                    .addComponent(tCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(bGuardar)
+                .addGap(53, 53, 53))
         );
 
         pack();
@@ -146,19 +150,19 @@ public class ActualizarCliente extends javax.swing.JInternalFrame {
             System.out.println("el cliente no esta registrado");
     }//GEN-LAST:event_bBuscarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
         int dni= Integer.parseInt(tDNI.getText());
         String nombre = tNombre.getText();
         String domicilio = tDomicilio.getText();
         int celular= Integer.parseInt(tCelular.getText());
         Cliente cli = new Cliente (dni, nombre, domicilio, celular);
-        clienteData.actualizarCliente(cli);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        clienteData.guardarCliente(cli);
+    }//GEN-LAST:event_bGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBuscar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
