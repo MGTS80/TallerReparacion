@@ -34,6 +34,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         mCliente = new javax.swing.JMenu();
         mNuevo = new javax.swing.JMenu();
         jActualizar = new javax.swing.JMenu();
+        mBorrarCliente = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,6 +79,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         mCliente.add(jActualizar);
 
+        mBorrarCliente.setText("Borrar");
+        mBorrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mBorrarClienteActionPerformed(evt);
+            }
+        });
+        mCliente.add(mBorrarCliente);
+
         jMenuBar1.add(mCliente);
 
         setJMenuBar(jMenuBar1);
@@ -102,7 +111,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
        ActualizarCliente actCliente = new ActualizarCliente();
        actCliente.setVisible(true);
        panelEscritorio.add(actCliente);
-       panelEscritorio.moveToFront(actCliente);
+       //panelEscritorio.moveToFront(actCliente);
     }//GEN-LAST:event_mClienteActionPerformed
 
     private void mNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mNuevoActionPerformed
@@ -111,7 +120,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
        NuevoCliente nuevoCliente = new NuevoCliente();
        nuevoCliente.setVisible(true);
        panelEscritorio.add(nuevoCliente);
-       panelEscritorio.moveToFront(nuevoCliente);
+       //panelEscritorio.moveToFront(nuevoCliente);
     }//GEN-LAST:event_mNuevoActionPerformed
 
     private void jActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jActualizarActionPerformed
@@ -120,8 +129,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
        ActualizarCliente cliente = new ActualizarCliente();
        cliente.setVisible(true);
        panelEscritorio.add(cliente);
-       panelEscritorio.moveToFront(cliente);
+       //panelEscritorio.moveToFront(cliente);
     }//GEN-LAST:event_jActualizarActionPerformed
+
+    private void mBorrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mBorrarClienteActionPerformed
+       panelEscritorio.removeAll();
+       panelEscritorio.repaint();
+       BorrarCliente cliente = new BorrarCliente();
+       cliente.setVisible(true);
+       panelEscritorio.add(cliente);
+       //panelEscritorio.moveToFront(cliente);
+    }//GEN-LAST:event_mBorrarClienteActionPerformed
 
    
     public static void main(String args[]) {
@@ -161,6 +179,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu mArchivo;
+    private javax.swing.JMenu mBorrarCliente;
     private javax.swing.JMenu mCliente;
     private javax.swing.JMenu mNuevo;
     private java.awt.Panel panelEscritorio;
